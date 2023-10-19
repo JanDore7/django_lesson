@@ -1,0 +1,5 @@
+1) pip install django==4.2.1  Установим фраемворк
+
+* django-admin - выведет в консоль все доступные команды
+
+2) django-admin startproject [название проекта]
