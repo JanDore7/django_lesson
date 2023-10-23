@@ -109,5 +109,9 @@
  	значение 'music' в соответствующее место в URL-шаблоне, 
  	заменив, например, <slug:cat_slug>. Затем она вернет полный 
  	URL-адрес.
+
+16) 301 и 302 при помощи классов. HttpResponseRedirect - 302;
+	HttpResponsePtrmanentRedirect - 301
+	Пример: HttpResponseRedirect(uri)
  	
 
