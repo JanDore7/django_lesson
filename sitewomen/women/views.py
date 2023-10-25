@@ -5,8 +5,13 @@ from django.template.loader import render_to_string
 
 
 def index(request):
-    t = render_to_string('women/index.html')
-    return HttpResponse(t)
+    # t = render_to_string('women/index.html')
+    # return HttpResponse(t)
+    return render(request, 'women/index.html')
+
+
+def about(request):
+    return render(request, 'women/about.html')
 
 
 def categories(request, cat_id):

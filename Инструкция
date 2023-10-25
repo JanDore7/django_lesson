@@ -120,7 +120,11 @@
 	шаблону index.html')
 
 
-
+18) Можно упростить код :
+	t = render_to_string('women/index.html')
+    	return HttpResponse(t)
+    	
+    Исползовав фукнкцию render(request, 'women/index.html')
 
 
 
