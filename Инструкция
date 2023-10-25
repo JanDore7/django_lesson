@@ -125,8 +125,36 @@
     	return HttpResponse(t)
     	
     Исползовав фукнкцию render(request, 'women/index.html')
+    
+    
+19) В settings в строке TEMPLATES прописаныы все настройки шаблонов,
+	
+	
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+	
+	
 
+    'BACKEND': Это параметр, который определяет, какой бэкенд шаблонизации будет использоваться. В вашем случае, 'django.template.backends.django.DjangoTemplates' означает, что вы используете стандартный бэкенд Django для шаблонизации.
 
+    'DIRS': Это список каталогов, где Django будет искать шаблоны. Если список пуст, как в вашем случае ('DIRS': []), Django будет искать шаблоны в каталогах приложений (параметр 'APP_DIRS': True). Если вы хотите добавить дополнительные каталоги для поиска шаблонов, вы можете указать их здесь.
+
+    'APP_DIRS': Этот параметр указывает, следует ли Django искать шаблоны в каталогах приложений. Установка 'APP_DIRS': True означает, что Django будет искать шаблоны в каталогах приложений. Это удобно, так как многие приложения в Django поставляются со своими собственными шаблонами.
+
+    'OPTIONS': Этот параметр содержит дополнительные параметры для настройки шаблонов. В вашем случае, вы указываете набор контекстных процессоров, которые предоставляют дополнительные переменные для шаблонов. Например, 'django.template.context_processors.debug' предоставляет переменную debug для отладки, а 'django.template.context_processors.request' предоставляет доступ к объекту request в шаблонах.
 
 
 
