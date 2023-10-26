@@ -2,15 +2,16 @@
 <html lang="RU">
 <head>
     <meta charset="UTF-8">
-    <title>{{ title }}</title>
+    <title>{{ my_title|default:'Без заголовка' }}</title>
 </head>
 <body>
-<p>{{ menu }}</p>
-<p>{{ float }}</p>
+<p>{{ menu|join:'| ' }}</p>
+<p>{{ float|add:'50' }}</p>
 <p>{{ lst.1 }}</p>
 <p>{{ set }}</p>
 <p>{{ dict.key1 }}</p>
 <p>{{ obj.a }}</p>
-<h1>{{ title }}</h1>
+<p>{{ url }}</p>
+<h1>{{ title|lower }}</h1>
 </body>
 </html>

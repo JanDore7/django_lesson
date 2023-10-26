@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpRespons
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.template.loader import render_to_string
-
+from django.template.defaultfilters import slugify
 
 menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти',]
 
@@ -22,7 +22,8 @@ def index(request):
             'lst': [1, 'abc', True],
             'set': {1, 2, 3, 4},
             'dict': {'key1': 'value1', 'key2': 'value2'},
-            'obj': MyClass(10, 20)
+            'obj': MyClass(10, 20),
+            'url': slugify('The may page')
             }
     return render(request, 'women/index.html', context=data)
 
