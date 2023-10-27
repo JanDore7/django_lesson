@@ -7,23 +7,17 @@ from django.template.defaultfilters import slugify
 menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти',]
 
 
-class MyClass:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
+data_db = [
+    {'id': 1, 'title': 'Анжелина Джоли', 'content': 'Биография Анжелины Джоли', 'is_published': True},
+    {'id': 2, 'title': 'Марго Робби', 'content': 'Биография Марго Робби', 'is_published': False},
+    {'id': 3, 'title': 'Джулия Робертс', 'content': 'Биография Джулия Робертс', 'is_published': True},
+]
 
 
 def index(request):
-    # t = render_to_string('women/index.html')
-    # return HttpResponse(t)
     data = {'title': 'ГЛАВНАЯ СТРАНИЦА',
             'menu': menu,
-            'float': 22.01,
-            'lst': [1, 'abc', True],
-            'set': {1, 2, 3, 4},
-            'dict': {'key1': 'value1', 'key2': 'value2'},
-            'obj': MyClass(10, 20),
-            'url': slugify('The may page')
+            'posts': data_db,
             }
     return render(request, 'women/index.html', context=data)
 
@@ -52,3 +46,5 @@ def archive(request, year):
 
 def page_not_found(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+
+

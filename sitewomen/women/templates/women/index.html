@@ -6,12 +6,17 @@
 </head>
 <body>
 <p>{{ menu|join:'| ' }}</p>
-<p>{{ float|add:'50' }}</p>
-<p>{{ lst.1 }}</p>
-<p>{{ set }}</p>
-<p>{{ dict.key1 }}</p>
-<p>{{ obj.a }}</p>
-<p>{{ url }}</p>
 <h1>{{ title|lower }}</h1>
+
+<ul>
+    {% for p in posts %}
+    <li>
+        <h2>{{ p.title }}</h2>
+        <p>{{ p.content }}</p>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+
 </body>
 </html>
