@@ -30,18 +30,8 @@ def categories(request, cat_id):
     return HttpResponse(f'<h1>Статьи по категориям</h1><p>категория: {cat_id}</p>')
 
 
-def categories_by_slug(request, cat_slug):
-    if request.GET:
-        print(request.GET)
-    return HttpResponse(f'<h1>Статьи по категориям</h1><p>slug: {cat_slug}</p>')
-
-
-def archive(request, year):
-    if year > 2023:
-        uri = reverse('cats', args=('music',))
-        return HttpResponseRedirect(uri)
-
-    return HttpResponse(f'<h1>Архив по годам</h1><p>год: {year}</p>')
+def show_post(request, post_id):
+    return HttpResponse(f'Отображение статьи с id: {post_id}')
 
 
 def page_not_found(request, exception):
