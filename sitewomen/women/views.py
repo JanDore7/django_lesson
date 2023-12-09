@@ -26,7 +26,7 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'women/about.html', {'title': 'О САЙТЕ'})
+    return render(request, 'women/about.html', {'title': 'О САЙТЕ', 'menu': menu})
 
 
 def categories(request, cat_id):
