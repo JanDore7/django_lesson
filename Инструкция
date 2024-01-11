@@ -325,7 +325,38 @@ DATABASES = {
 В каждом из этих примеров замените your_database_name, your_username, и your_password на актуальные значения для вашей базы данных.
 
 
+Для создания моделей нужно импортировать from django.db import models и наследоваться от него при создании модели, пример class Women(models.Model):
 
+
+При создании модели поле id прописывать не нужно оно создается автоматически.
+
+
+title = models.CharField(max_length=255) - задано ограничение на 255 знаков
+content = models.TextField(blank=True) - поле может быть пустым
+time_create = models.DateTimeField(auto_now_add=True) - автоматически запишет время при создании записи
+time_update = models.DateTimeField(auto_now=True) - будет менять время при каждом изминении записи.
+is_published = models.BooleanField(default=True) - по умолчанию опубликовано, т.е в значении True
+
+
+CharField: Строковое поле с фиксированной длиной. - models.CharField(max_length=100)
+TextField: Большое текстовое поле. - models.TextField()
+IntegerField: Целочисленное поле. - models.IntegerField()
+FloatField: Поле с плавающей точкой (для хранения чисел с плавающей точкой). - models.FloatField()
+BooleanField: Логическое поле (True/False). - models.BooleanField()
+DateField: Поле для хранения даты. - models.DateField()
+DateTimeField: Поле для хранения даты и времени. - models.DateTimeField()
+ImageField: Поле для загрузки изображений. - models.ImageField(upload_to='images/')
+FileField: Поле для загрузки файлов. - models.FileField(upload_to='files/')
+mailField: Поле для хранения адреса электронной почты. - models.EmailField()
+SlugField: Поле для хранения короткого текста, обычно используется для URL. - models.SlugField()
+ForeignKey: Связь с другой моделью. - models.ForeignKey(OtherModel, on_delete=models.CASCADE)
+ManyToManyField: Многие ко многим отношение с другой моделью. - models.ManyToManyField(AnotherModel)
+DecimalField: Поле для хранения десятичных чисел. - models.DecimalField(max_digits=5, decimal_places=2)
+URLField: Поле для хранения URL. - models.URLField()
+
+Это всего лишь небольшой набор полей, доступных в Django. Вы также можете создавать свои собственные поля, наследуясь от базовых классов, предоставляемых Django.
+
+ 
 
 
 
